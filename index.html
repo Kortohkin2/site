@@ -1,166 +1,238 @@
-<!doctype html>
-<html>
-  <head>
-    <center>
-    <a href="https://kortohkin2.github.io/site2/">Расписание над чертой(Нажать для смены)</a>
-  </center>
-    <link href="styles/first.css" rel="stylesheet" type="text/css" />
-    <link
-  href="http://fonts.googleapis.com/css?family=Open+Sans"
-  rel="stylesheet"
-  type="text/css" />
- 
-    <meta charset="utf-8" />
-    <title>Расписание над чертой</title>
-  </head>
-  <body>
-    <img src="images/uin.jpg" alt="лого"/>
-    <center>
-    <h1>Расписание</h1>
-    <center>
-    <h2>Понедельник</h2>
-    <table BORDER=8 WIDTH=90% BGCOLOR="white" > 
-      <tr>
-        <td>Время</td>
-        <td>Пара</td>
-        <td>Кабинет</td>
-      </tr>
-      <tr>
-        <td>14:00-15:30</td>
-        <td>Физ.ра с 04.09 по 18.12</td>
-        <td>Б1</td>
-      </tr>
-      <tr>
-        <td>15:40-17:10</td>
-        <td>Уголовное право-Лек с 11.09 по 18.12</td>
-        <td>Г1-116</td>
-      </tr>
-      <tr>
-        <td>17:20-18:50</td>
-        <td>Административное право-Лек с 11.09 по 04.12</td>
-        <td>Г1-116</td>
-      </tr>
-      <tr>
-        <td>19:00-20:30</td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-    <h2>Вторник</h2>
-    <table BORDER=8 WIDTH=90% BGCOLOR="white" > 
-      <tr>
-        <td>Военка</td>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание и календарь</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #007bff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        #calendar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
         
+        #calendar .current-date {
+            font-size: 24px;
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Расписание занятий</h1>
+    </header>
+    <div class="container">
+        <div id="calendar">
+            <span class="current-date">Сегодня:</span>
+            <span id="currentDate"></span>
+        </div>
+        <div class="tabs">
+            <div class="tab active" data-week="even">Чётная неделя</div>
+            <div class="tab" data-week="odd">Нечётная неделя</div>
+        </div>
+        <table class="even">
+            <!-- Здесь можно добавить расписание занятий для чётной недели -->
+            <thead>
+                <tr>
+                    <th>День недели</th>
+                    <th>Пара 1 (14:00-15:30)</th>
+                    <th>Пара 2 (15:40-17:10)</th>
+                    <th>Пара 3 (17:20-18:50)</th>
+                    <th>Пара 4 (19:00-20:30)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Понедельник</td>
+                    <td>Физ.ра с 04.09 по 18.12</td>
+                    <td>Уголовное право-Лекция с 11.09 по 18.12 </td>
+                    <td>	Административное право-Лекция с 11.09 по 04.12</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Вторник</td>
+                    <td>Военка</td>
+                </tr>
+                <tr>
+                  <td>Среда</td>
+                  <td>	Физ.ра</td>
+                  <td>Формы Народного представительства-Практика с 13.09 по 20.12</td>
+                  <td>Финансовое право-Лекция с  13.09 по 06.12</td>
+                    <td>Психология личности и группы-Практика с 13.09 по 20.12</td>
+              </tr>
+              <tr>
+                <td>Четверг</td>
+                <td>Административное право -Практика с 14.09 по 07.12</td>
+                <td>Психология личности и группы-Лекция с 07.09 по 30.11</td>
+                <td>Гражданское право-Лекция с 14.09 по 07.12</td>
+                    <td>	Гражданский процесс- Лекция с 28.09 по 21.12</td>
+            </tr>
+            <tr>
+              <td>Пятница</td>
+              <td>ОУД-6.1</td>
+              <td></td>
+              <td>Основы теории и практики юридического консультирования - Практика с 15.09 по 08.12</td>
+                    <td>Уголовное право - Пр с 15.09 по 08.12</td>
+          </tr>
+          <tr>
+            <td>Суббота</td>
+            <td>ОУД</td>
+            <td>ОУД</td>
+            <td>ОУД</td>
+                    <td>ОУД</td>
+        </tr>
+                <!-- Продолжайте добавлять расписание для других дней -->
+            </tbody>
+        </table>
+        <table class="odd" style="display: none;">
+            <!-- Здесь можно добавить расписание занятий для нечётной недели -->
+            <thead>
+              <tr>
+                <th>День недели</th>
+                <th>Пара 1 (14:00-15:30)</th>
+                <th>Пара 2 (15:40-17:10)</th>
+                <th>Пара 3 (17:20-18:50)</th>
+                <th>Пара 4 (19:00-20:30)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Понедельник</td>
+                <td>Физ.ра с 04.09 по 18.12</td>
+                <td>Уголовное право-Лекция с 11.09 по 18.12 </td>
+                <td>Налоговое право- Практика с 04.09 по 11.12</td>
+                <td>Уголовный процесс-Практика с 04.09 по 11.12</td>
+            </tr>
+            <tr>
+                <td>Вторник</td>
+                <td>Военка</td>
+            </tr>
+            <tr>
+              <td>Среда</td>
+              <td>	Физ.ра с 06.09 по 27.12</td>
+              <td>Формы Народного представительства-Лекция с 06.09 поо 13.12</td>
+              <td>Налоговое право -Лекция с 06.09 по 13.12</td>
+                <td></td>
+          </tr>
+          <tr>
+            <td>Четверг</td>
+            <td>Гражданское право - Практика с 07.09 по 30.11</td>
+            <td>Психология личности и группы-Лекция с 07.09 по 30.11</td>
+            <td>	Финансовое право-Практика с 07.09 по 30.11</td>
+                <td>	Гражданский процесс- Практика с 5.10 по 28.12</td>
+        </tr>
+        <tr>
+          <td>Пятница</td>
+          <td>ОУД-6.1</td>
+          <td></td>
+          <td>Основы теории и практики юридического консультирования - Лекция с 08.09 по 01.12</td>
+                <td></td>
       </tr>
-    </table>
-    <h2>Среда</h2>
-    <table BORDER=8 WIDTH=90% BGCOLOR="white" > 
       <tr>
-        <td>Время</td>
-        <td>Пара</td>
-        <td>Кабинет</td>
-      </tr>
-      <tr>
-        <td>14:00-15:30</td>
-        <td>Физ.ра</td>
-        <td>Б1</td>
-      </tr>
-      <tr>
-        <td>15:40-17:10</td>
-        <td>Формы Народного представительства-Пр с 13.09 поо 20.12</td>
-        <td>Г1-217</td>
-      </tr>
-      <tr>
-        <td>17:20-18:50</td>
-        <td>Финансовое право-Лек с 13.09 по 06.12</td>
-        <td>Г1-116</td>
-      </tr>
-      <tr>
-        <td>19:00-20:30</td>
-        <td>Психология личности и группы-Пр с 13.09 по 20.12</td>
-        <td></td>
-      </tr>
-    </table>
-    <h2>Четверг</h2>
-    <table BORDER=8 WIDTH=90% BGCOLOR="white" > 
-      <tr>
-        <td>Время</td>
-        <td>Пара</td>
-        <td>Кабинет</td>
-      </tr>
-      <tr>
-        <td>14:00-15:30</td>
-        <td>Административное право -Пр с 14.09 по 07.12</td>
-        <td>В1-31</td>
-      </tr>
-      <tr>
-        <td>15:40-17:10</td>
-        <td>Психология личности и группы-Лек с 07.09 по 30.11</td>
-        <td>В1-10</td>
-      </tr>
-      <tr>
-        <td>17:20-18:50</td>
-        <td>Гражданское право-Лек с 14.09 по 07.12</td>
-        <td>В1-29</td>
-      </tr>
-      <tr>
-        <td>19:00-20:30</td>
-        <td>Гражданский процесс- Лек с 28.09 по 21.12</td>
-        <td>В1-29</td>
-      </tr>
-    </table>
-    <h2>Пятница</h2>
-    <table BORDER=8 WIDTH=90% BGCOLOR="white" > 
-      <tr>
-        <td>Время</td>
-        <td>Пара</td>
-        <td>Кабинет</td>
-      </tr>
-      <tr>
-        <td>15:40-17:10</td>
-        <td>ОУД-6.1</td>
-        <td>Гл.-302</td>
-      </tr>
-      <tr>
-        <td>17:20-18:50</td>
-        <td>Основы теории и практики юридического консультирования - Пр с 15.09 по 08.12</td>
-        <td>Гл.-234</td>
-      </tr>
-      <tr>
-        <td>19:00-20:30</td>
-        <td>Уголовное право - Пр с 15.09 по 08.12</td>
-        <td>Гл.- 234</td>
-      </tr>
-    </table>
-    <h2>Суббота</h2>
-    <table BORDER=8 WIDTH=90% BGCOLOR="white" > 
-      <tr>
-        <td>Время</td>
-        <td>Пара</td>
-        <td>Кабинет</td>
-      </tr>
-      <tr>
-        <td>14:00-15:30</td>
+        <td>Суббота</td>
         <td>ОУД</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>15:00-16:30</td>
         <td>ОУД</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>15:40-17:10</td>
         <td>ОУД</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>16:40-18:10</td>
-        <td>ОУД</td>
-        <td></td>
-      </tr>
-    </table>
-    <script src="scripts/main.js"></script>
-  </body>
-</center>
+                <td>ОУД</td>
+    </tr>
+                <!-- Продолжайте добавлять расписание для других дней -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // JavaScript для отображения текущей даты
+        const currentDateElement = document.getElementById('currentDate');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const currentDateString = new Date().toLocaleDateString('ru-RU', options);
+        currentDateElement.textContent = currentDateString;
+
+        // JavaScript для переключения между чётной и нечётной неделями
+        const tabs = document.querySelectorAll('.tab');
+        const tables = document.querySelectorAll('table');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const week = tab.getAttribute('data-week');
+                tables.forEach(table => {
+                    table.style.display = 'none';
+                });
+                document.querySelector(`table.${week}`).style.display = 'table';
+            });
+        });
+    </script>
+</body>
 </html>
+
