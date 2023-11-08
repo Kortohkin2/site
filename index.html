@@ -4,88 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Расписание и календарь</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #007bff;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        td {
-            background-color: #ffffff;
-        }
-
-        #calendar {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        #calendar .current-date {
-            font-size: 24px;
-            color: #007bff;
-            margin-right: 10px;
-        }
-
-        .tabs {
-            display: flex;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            margin-right: 10px;
-            border-radius: 5px;
-        }
-
-        .tab.active {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="first.css">
+    
 </head>
 <body>
     <header>
@@ -209,30 +129,20 @@
             </tbody>
         </table>
     </div>
+    <div class="clicker">
+        <h1>Кликер</h1>
+        <img class="face" src="https://sun9-28.userapi.com/impg/Cr-dKrp0pH1M7wGNzzlyqjuz_1_Jb9GP6W9UDA/LTC153kx6Go.jpg?size=1620x2160&quality=95&sign=dabc63f5add7efdf5b8db7803bc81c6f&type=album">
+         <p class="click" id="aboba">Start clicked</p>
+         <button class="toma" onclick="clicker()">Комментарий Тамары</button>
+        
+    </div>
+    
 
-    <script>
-        // JavaScript для отображения текущей даты
-        const currentDateElement = document.getElementById('currentDate');
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const currentDateString = new Date().toLocaleDateString('ru-RU', options);
-        currentDateElement.textContent = currentDateString;
-
-        // JavaScript для переключения между чётной и нечётной неделями
-        const tabs = document.querySelectorAll('.tab');
-        const tables = document.querySelectorAll('table');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                const week = tab.getAttribute('data-week');
-                tables.forEach(table => {
-                    table.style.display = 'none';
-                });
-                document.querySelector(`table.${week}`).style.display = 'table';
-            });
-        });
-    </script>
+    <footer>
+       
+    </footer>
+<script src="https://code.s3.yandex.net/web-code/smoothly.js"></script>
+ <script src="main.js"></script>;
+    
 </body>
 </html>
-
