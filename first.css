@@ -1,0 +1,94 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: auto;
+    
+}
+
+header {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #007bff;
+    
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+td {
+    background-color: #ffffff;
+}
+
+#calendar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#calendar .current-date {
+    font-size: 24px;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.tabs {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background-color: #0056b3;
+}
+.clicker{
+    text-align: center;
+}
+.face{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+.toma{
+    background-image: url(https://cdn.icon-icons.com/icons2/760/PNG/512/one-finger-click-black-hand-symbol_icon-icons.com_64350.png);
+}
